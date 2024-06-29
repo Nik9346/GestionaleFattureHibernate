@@ -16,7 +16,8 @@ public class FatturaRepositoryImpl implements FatturaRepository {
 
 	private static ClienteRepository clienteRepository = new ClienteRepositoryImpl();
 	private static ArticoloRepository articoloRepository = new ArticoloRepositoryImpl();
-
+	
+	//Funzione utilizzata per registrare una nuova fattura, creando prima il cliente, la lista degli articoli ed infine la fattura con i relativi collegamenti
 	@Override
 	public void registraFattura(Cliente cliente, List<Articolo> articoli, Fattura fattura) {
 
@@ -49,7 +50,8 @@ public class FatturaRepositoryImpl implements FatturaRepository {
 				transaction.rollback();
 		}
 	}
-
+	
+	//Funzione utilizzata per chiedere al db tutta la lista delle fatture presenti
 	@Override
 	public List<Fattura> getFatture() {
 		try (Session session = HibernateSessionUtil.getSession().openSession()){

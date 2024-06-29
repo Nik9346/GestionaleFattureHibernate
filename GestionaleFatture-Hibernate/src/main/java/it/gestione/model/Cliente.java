@@ -29,6 +29,8 @@ public class Cliente {
 	@Column
 	private String cognome;
 	
+	
+	//collegamento uno a molti con la tabella fatture mappato dalla variabile cliente presente in classe Fattura	
 	@OneToMany(
 			mappedBy = "cliente", // deve essere lo stesso nome della variabile proprietaria del link manytoOne in Fattura
 			fetch = FetchType.EAGER,

@@ -42,10 +42,12 @@ public class Fattura {
 	@Column 
 	private double totale_Fattura;
 	
+	// Collegamento molti a uno con la tabella Cliente	
 	@ManyToOne(cascade = CascadeType.REFRESH)
 	@JoinColumn(name = "p_Cliente",referencedColumnName = "id")
 	private Cliente cliente;
 	
+	//Collegamento molti a molti con la tabella Articoli ottenuto passando per una jointable articoli_fatture	
 	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(
 			name="articoli_fatture", 

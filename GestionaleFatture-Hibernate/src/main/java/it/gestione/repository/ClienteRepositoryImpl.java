@@ -12,7 +12,9 @@ import it.gestione.model.Cliente;
 
 
 public class ClienteRepositoryImpl implements ClienteRepository {
-
+	
+	
+	//Funzione utilizzata per ottenere dal database i dati di un cliente passando una Stringa con il nome	
 	@Override
 	public Cliente getClienteById(String nome) {
 		try (Session session = HibernateSessionUtil.getSession().openSession()){
@@ -24,8 +26,8 @@ public class ClienteRepositoryImpl implements ClienteRepository {
 			System.out.println(e.getStackTrace());
 			return null;
 		}
-	
 	}
+	//Funzione utilizzata per ottenere dal db tutti i clienti registrati
 	@Override
 	public List<Cliente> getClienti(){
 		try (Session session = HibernateSessionUtil.getSession().openSession()){
@@ -37,6 +39,8 @@ public class ClienteRepositoryImpl implements ClienteRepository {
 			return null;
 		}
 	}
+	
+	//Funzione utilizzata per registrare un cliente dopo aver costruito un oggetto utilizzando la Classe Cliente
 	@Override
 	public Cliente registraCliente(Cliente cliente) {
 		
@@ -50,7 +54,6 @@ public class ClienteRepositoryImpl implements ClienteRepository {
 			transaction.commit();
 			System.out.println("Il Cliente registrato è: "+cliente.toString());
 			return cliente;
-			
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 			if(transaction != null)

@@ -34,6 +34,7 @@ public class Articolo {
 	private int quantita;
 	
 	
+	// collegamento alla tabella fatture molti a molti che passa per una jointable articoli_fatture	
 	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "articoli_fatture",
 	joinColumns = @JoinColumn(name="ID_Articolo",referencedColumnName = "id"),
@@ -72,6 +73,7 @@ public class Articolo {
 	public void setFatture(List<Fattura> fatture) {
 		this.fatture = fatture;
 	}
+	
 	//ToString dell'oggetto
 	@Override
 	public String toString() {

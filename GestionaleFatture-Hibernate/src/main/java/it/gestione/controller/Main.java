@@ -29,15 +29,17 @@ public class Main {
 	private static FatturaRepository fatturaRepository = new FatturaRepositoryImpl();
 
 	public static void main(String[] args) throws IOException {
-
 		controller();
-
 	}
 
 	static void controller() throws IOException {
 		System.out.println("Cosa vuoi fare?");
-		System.out.println("N - Nuova Fattura " + "\nL - Registro Fatture " + "\nRA - Registra Articolo "
-				+ "\nA - Elenco Articoli " + "\nC - Elenco Clienti " + "\nE - Esci");
+		System.out.println(	"N - Nuova Fattura " +
+							"\nL - Registro Fatture " + 
+							"\nRA - Registra Articolo "+ 
+							"\nA - Elenco Articoli " + 
+							"\nC - Elenco Clienti " + 
+							"\nE - Esci");
 		String scelta = bufferedReader.readLine();
 		switch (scelta.toUpperCase()) {
 		case "N": {
@@ -52,18 +54,25 @@ public class Main {
 		}
 		case "L": {
 			fatturaRepository.getFatture().forEach(f -> System.out.println(f.toString() + "\n\n"));
+			controller();
 			break;
 		}
 		case "RA": {
 			articoloRepository.registraArticolo(registraArticolo());
+			controller();
 			break;
 		}case "A":{
 			System.out.println("***************LISTA DEGLI ARTICOLI***************");
 			articoloRepository.leggiArticoli().forEach(a->System.out.println(a.toString()));
+			controller();
+			break;
+		}case "E":{
+			System.exit(1);
 			break;
 		}default:
 			System.out.println("Scelta non consentita, inserisci una scelta valida");
-			;
+			controller();
+			break;
 		}
 
 	}

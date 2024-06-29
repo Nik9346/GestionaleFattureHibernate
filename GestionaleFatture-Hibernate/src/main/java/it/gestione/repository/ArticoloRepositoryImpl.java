@@ -13,9 +13,9 @@ import it.gestione.model.Articolo;
 
 public class ArticoloRepositoryImpl implements ArticoloRepository {
 
+	// Funzione utilizzata per la registrazione di un articolo, svolta passando un oggetto di classe Articolo.
 	@Override
 	public void registraArticolo(Articolo articolo) {
-		
 		Transaction transaction = null;
 
 		try (Session session = HibernateSessionUtil.getSession().openSession()) {
@@ -34,11 +34,11 @@ public class ArticoloRepositoryImpl implements ArticoloRepository {
 		}
 	}
 
+	//Funzione utilizzata per la registrazione di più articoli
 	@Override
 	public List<Articolo> registraArticoli(List<Articolo> articoli) {
 		
 		Transaction transaction = null;
-		
 		try (Session session = HibernateSessionUtil.getSession().openSession()){
 			transaction = session.beginTransaction();
 			for(Articolo a: articoli) {
@@ -47,7 +47,6 @@ public class ArticoloRepositoryImpl implements ArticoloRepository {
 			}
 			transaction.commit();
 			return articoli;
-			
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 			if(transaction !=null)
@@ -56,6 +55,7 @@ public class ArticoloRepositoryImpl implements ArticoloRepository {
 		return null;
 	}
 
+	//Funzione utilizzata per leggere tutti gli articoli presenti nel db
 	@Override
 	public List<Articolo> leggiArticoli() {
 		try (Session session = HibernateSessionUtil.getSession().openSession()){
