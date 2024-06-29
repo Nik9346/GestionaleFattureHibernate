@@ -67,7 +67,7 @@ public class Main {
 			controller();
 			break;
 		}case "E":{
-			System.exit(1);
+			System.exit(0);
 			break;
 		}default:
 			System.out.println("Scelta non consentita, inserisci una scelta valida");
