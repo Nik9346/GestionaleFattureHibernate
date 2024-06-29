@@ -29,10 +29,7 @@ public class Main {
 	private static FatturaRepository fatturaRepository = new FatturaRepositoryImpl();
 
 	public static void main(String[] args) throws IOException {
-//		clienteRepository.getClienti().forEach(c ->System.out.println(c.toString()));
 
-//		clienteRepository.getClienti().forEach(c->System.out.println(c.toString()));
-//		System.out.println(clienteRepository.getClienteById("Riccardo"));
 		controller();
 
 	}
