@@ -76,6 +76,8 @@ public class Main {
 		}
 
 	}
+	
+	//Funzione utilizzata per la costruzione di un oggetto in classe Cliente tramite BufferReader
 	private static Cliente registraCliente() {
 		try {
 			Cliente cliente = new Cliente();
@@ -94,7 +96,7 @@ public class Main {
 			return null;
 		}
 	}
-
+	//Funzione utilizzata per la costruzione di un oggetto in classe Articolo tramite BufferReader
 	private static Articolo registraArticolo() {
 
 		try {
@@ -120,6 +122,8 @@ public class Main {
 			return null;
 		}
 	}
+	
+	//Funzione utilizzata per la costruzione di più oggetti in classe Articolo che ritorna una lista di oggetti in classe Articolo
 	private static List<Articolo> registraArticoli(){
 		System.out.println("Per Uscire dalla registrazione dell'articolo premere Q, altrimenti premi N");
 
@@ -139,7 +143,7 @@ public class Main {
 			return null;
 		}
 	}
-
+	//Funzione utilizzata per la registrazione di una nuova fattura con i dati forniti dal BufferReader
 	private static void registraFattura() {
 
 		try {

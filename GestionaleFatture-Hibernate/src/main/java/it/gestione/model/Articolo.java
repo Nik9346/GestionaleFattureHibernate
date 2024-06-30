@@ -19,7 +19,7 @@ import jakarta.persistence.Table;
 @Table(name="articoli") // Specifica il nome della tabella di riferimento
 public class Articolo {
 	
-	//Attributi di istanza dell'oggetto
+	//Attributi di istanza di classe Articolo
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;

@@ -25,7 +25,7 @@ import java.text.DecimalFormatSymbols;
 @Table(name = "fatture")
 public class Fattura {
 	
-	//Attributi di istanza
+	//Attributi di istanza della classe Fattura
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private int ID;

@@ -17,7 +17,7 @@ import jakarta.persistence.Table;
 @Table(name="clienti") //Specifica il nome della tabella di riferimento
 public class Cliente {
 	
-	//Attributi di istanza del Cliente
+	//Attributi di istanza della classe Cliente
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
